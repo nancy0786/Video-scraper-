@@ -5,7 +5,7 @@ import time
 
 # ================== CONFIG ==================
 
-TOKEN = "7864236625:AAEj66g9NjqGTplyf4UoLczTP77wj76UIaY"
+TOKEN = ""
 
 # --- Paste Channel IDs Below ---
 SHORTS_CHANNEL = "-1002524650614"
