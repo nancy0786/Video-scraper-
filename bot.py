@@ -31,7 +31,7 @@ async def crawl_site(start_url):
     global running
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(headless=True, args=["--no-sandbox"])
         page = await browser.new_page()
 
         queue.append(start_url)
