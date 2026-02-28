@@ -2,16 +2,17 @@ import asyncio
 from playwright.async_api import async_playwright
 import telebot
 import time
+import os
 
 # ================== CONFIG ==================
 
-TOKEN = "7864236625:AAEj66g9NjqGTplyf4UoLczTP77wj76UIaY"
+TOKEN = os.environ["BOT_TOKEN"]
 
 SHORTS_CHANNEL = "-1002524650614"
 MEDIUM_CHANNEL = "-1002575035304"
 LONG_CHANNEL = "-1002509561008"
 
-MAX_VIDEOS = 200
+MAX_VIDEOS = 20000
 
 # ============================================
 
@@ -154,7 +155,7 @@ def begin_crawl(message):
 
     bot.reply_to(message, "Crawling started...")
 
-    asyncio.run(crawl_site(url))
+    asyncio.create_task(crawl_site(url))
 
     bot.reply_to(message, "Crawling finished.")
 
